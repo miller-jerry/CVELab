@@ -14,7 +14,7 @@ topology:
       kind: linux
       image: vulhub/weblogic:10.3.6.0-2017
       env:
-        FLAG: flag{acc0c255ce84370e1b8b434cd18e92b4}
+        FLAG: flag{0f39a1768c90acc527eb6982329ae9f0}
       cmd: startWebLogic.sh
       binds:
       - flag-target-1.txt:/flag
@@ -23,7 +23,7 @@ topology:
       image: cvelab-runtime-2019-9193-e8b2723eae7f
       env:
         POSTGRES_PASSWORD: postgres
-        FLAG: flag{4d5dc202d328141c339af99244164b34}
+        FLAG: flag{30c01511abc217a7c31a37e03868d5f3}
       binds:
       - flag-target-2.txt:/flag
   links:

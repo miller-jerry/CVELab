@@ -14,7 +14,7 @@ topology:
       kind: linux
       image: vulhub/activemq:5.11.1-with-cron
       env:
-        FLAG: flag{8871bc576165f8d42be47d578171e5fe}
+        FLAG: flag{217993b8b54f26639f28c3c5ea325541}
       binds:
       - flag-target-1.txt:/flag
     target-2:
@@ -22,7 +22,7 @@ topology:
       image: cvelab-runtime-2019-9193-e8b2723eae7f
       env:
         POSTGRES_PASSWORD: postgres
-        FLAG: flag{eaef0bda9f5afb0615910a0187398928}
+        FLAG: flag{49a6c9d3775e49fed8025935956be86c}
       binds:
       - flag-target-2.txt:/flag
   links:

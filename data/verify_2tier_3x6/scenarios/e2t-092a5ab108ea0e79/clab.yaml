@@ -14,14 +14,14 @@ topology:
       kind: linux
       image: vulhub/activemq:5.11.1-with-cron
       env:
-        FLAG: flag{5fe74f4d0979c5e8c429d67b54155059}
+        FLAG: flag{3ab5ae86e126cb03970ff150a6338054}
       binds:
       - flag-target-1.txt:/flag
     target-2:
       kind: linux
       image: vulhub/elasticsearch:1.1.1
       env:
-        FLAG: flag{caba33c13b17670418378d7c853f1eb4}
+        FLAG: flag{14c3f0b6cd7e9a761263416210f7bd37}
       binds:
       - flag-target-2.txt:/flag
   links:

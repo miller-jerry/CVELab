@@ -17,7 +17,7 @@ topology:
       kind: linux
       image: cvelab-runtime-2018-16509-6690af7aec2e
       env:
-        FLAG: flag{4cde815acc0f29bc6d941f1991cfee18}
+        FLAG: flag{80d3172c8cd5d602500f42a8ae6d7f3e}
       cmd: php -t /var/www/html -S 0.0.0.0:8080
       binds:
       - /home/htxxp/test/CVELab/data/atoms/CVE-2018-16509/init/index.php:/var/www/html/index.php
@@ -27,7 +27,7 @@ topology:
       image: cvelab-runtime-2019-9193-e8b2723eae7f
       env:
         POSTGRES_PASSWORD: postgres
-        FLAG: flag{8a4562b3e1eddb90197bd740f3a91cdb}
+        FLAG: flag{34baebc2b94482a3edb095e36cae3afa}
       binds:
       - flag-target-2.txt:/flag
   links:

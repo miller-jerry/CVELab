@@ -1,1 +1,1 @@
-flag{57e842d0d34a5e27f514dbf184c6cceb}
+flag{cb60b64c0c4478c0030dccf6d4f833c8}

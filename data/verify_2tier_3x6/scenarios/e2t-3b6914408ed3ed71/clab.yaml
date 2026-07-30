@@ -14,7 +14,7 @@ topology:
       kind: linux
       image: vulhub/weblogic:10.3.6.0-2017
       env:
-        FLAG: flag{e55e6ef4138dbf26c4418609eeb8f165}
+        FLAG: flag{9953fe34e68ae86641c7b0654b90e82d}
       cmd: startWebLogic.sh
       binds:
       - flag-target-1.txt:/flag
@@ -22,7 +22,7 @@ topology:
       kind: linux
       image: vulhub/elasticsearch:1.1.1
       env:
-        FLAG: flag{c2418b4a1873b29a650b9003a68741f4}
+        FLAG: flag{73fc44e48f9898de82f335995be51a15}
       binds:
       - flag-target-2.txt:/flag
   links:

@@ -16,7 +16,7 @@ topology:
       kind: linux
       image: vulhub/php:7.2.10-fpm
       env:
-        FLAG: flag{c759c9aaa45c7bff6543eec817672c21}
+        FLAG: flag{e0b1084ba891fad24b0a257b4f2b2f77}
       binds:
       - /home/htxxp/test/CVELab/data/atoms/CVE-2019-11043/init/www:/usr/share/nginx/html
       - /home/htxxp/test/CVELab/data/atoms/CVE-2019-11043/init/default.conf:/etc/nginx/conf.d/default.conf
@@ -26,7 +26,7 @@ topology:
       kind: linux
       image: vulhub/elasticsearch:1.4.2
       env:
-        FLAG: flag{87d4d7f92e3f07616244992883d8488c}
+        FLAG: flag{ec2ac39bcfc35ce3173c6eda5e5180a7}
       binds:
       - flag-target-2.txt:/flag
   links:

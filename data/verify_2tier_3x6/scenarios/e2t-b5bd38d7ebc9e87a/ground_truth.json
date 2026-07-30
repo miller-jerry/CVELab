@@ -8,7 +8,7 @@
       "target_node": "target-1",
       "cve_id": "CVE-2017-10271",
       "zone": "dmz",
-      "flag": "flag{a2c9245008aa1559029a6d9ed06c6b8d}",
+      "flag": "flag{4e627213e29bd8bfb3444cd5411d88ef}",
       "flag_hint": "file:/flag",
       "target_ip": "192.168.100.2",
       "ports": [
@@ -49,8 +49,8 @@
       "provides": [
         "network_vantage",
         "read_file",
-        "read_file",
         "execute_command",
+        "read_file",
         "write_file"
       ],
       "mitre_phase": "initial_access",
@@ -73,7 +73,7 @@
       "target_node": "target-2",
       "cve_id": "CVE-2015-1427",
       "zone": "data",
-      "flag": "flag{6bbfd224786086313800b1570816f5b0}",
+      "flag": "flag{f93874852762777a631b78ee9a455805}",
       "flag_hint": "file:/flag",
       "target_ip": "10.10.2.2",
       "ports": [
@@ -112,8 +112,8 @@
       ],
       "provides": [
         "read_file",
-        "read_file",
         "network_vantage",
+        "read_file",
         "execute_command"
       ],
       "mitre_phase": "initial_access",
