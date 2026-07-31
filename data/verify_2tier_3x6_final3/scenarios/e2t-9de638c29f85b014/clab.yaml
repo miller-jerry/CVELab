@@ -1,0 +1,40 @@
+name: e2t-9de638c29f85b014
+topology:
+  nodes:
+    attacker:
+      kind: linux
+      image: clab-agent:latest
+    edge-router:
+      kind: linux
+      image: frrouting/frr:latest
+    data-router:
+      kind: linux
+      image: frrouting/frr:latest
+    target-1:
+      kind: linux
+      image: vulhub/weblogic:10.3.6.0-2017
+      env:
+        FLAG: flag{4efee2c1a6ef371fa9788b05aad30e57}
+      cmd: startWebLogic.sh
+      binds:
+      - flag-target-1.txt:/flag
+    target-2:
+      kind: linux
+      image: vulhub/elasticsearch:1.1.1
+      env:
+        FLAG: flag{9631d121f19eb18ab59e354c8751f80c}
+      binds:
+      - flag-target-2.txt:/flag
+  links:
+  - endpoints:
+    - attacker:eth1
+    - edge-router:eth1
+  - endpoints:
+    - edge-router:eth2
+    - data-router:eth1
+  - endpoints:
+    - target-1:eth1
+    - edge-router:eth3
+  - endpoints:
+    - target-2:eth1
+    - data-router:eth2

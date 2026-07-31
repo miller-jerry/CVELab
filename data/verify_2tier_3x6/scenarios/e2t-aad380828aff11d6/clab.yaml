@@ -17,7 +17,7 @@ topology:
       kind: linux
       image: vulhub/php:5.4.1-cgi
       env:
-        FLAG: flag{93db1fb7c49293aa45e49c83a48755e0}
+        FLAG: flag{b5130dc9470989a4e6b7cc58af46de12}
       binds:
       - /home/htxxp/test/CVELab/data/atoms/CVE-2012-1823/init/www:/var/www/html
       - flag-target-1.txt:/flag
@@ -25,7 +25,7 @@ topology:
       kind: linux
       image: vulhub/elasticsearch:1.1.1
       env:
-        FLAG: flag{560cb9e96bd6a74cb4fe7f0972d4946f}
+        FLAG: flag{0ab1cba472a42907fa0d717dc98e43b1}
       binds:
       - flag-target-2.txt:/flag
   links:

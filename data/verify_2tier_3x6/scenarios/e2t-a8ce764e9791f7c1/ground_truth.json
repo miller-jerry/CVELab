@@ -8,7 +8,7 @@
       "target_node": "target-1",
       "cve_id": "CVE-2012-1823",
       "zone": "dmz",
-      "flag": "flag{90aaf81aba5452560e68d2a9e33204eb}",
+      "flag": "flag{43612018df7ab7d44cb12fe864f759f3}",
       "flag_hint": "file:/flag",
       "target_ip": "192.168.100.2",
       "ports": [
@@ -72,7 +72,7 @@
       "target_node": "target-2",
       "cve_id": "CVE-2015-1427",
       "zone": "data",
-      "flag": "flag{4f2ac0f66c3219588bdfde7218cdb3b7}",
+      "flag": "flag{f30106d8e0cd320f2536290edc455098}",
       "flag_hint": "file:/flag",
       "target_ip": "10.10.2.2",
       "ports": [
@@ -117,9 +117,9 @@
       ],
       "provides": [
         "read_file",
+        "execute_command",
         "network_vantage",
-        "read_file",
-        "execute_command"
+        "read_file"
       ],
       "mitre_phase": "initial_access",
       "readiness_probes": [

@@ -748,19 +748,27 @@ class ScenarioVerifier:
                 target_ip, str(port),
             ], timeout=10)
         else:
-            inspected = self._run_command([
-                "docker", "inspect", "-f", "{{.State.Pid}}", container,
-            ])
-            if inspected.returncode != 0 or not inspected.stdout.strip().isdigit():
-                return {
-                    "port": port,
-                    "reachable": False,
-                    "detail": inspected.stderr.strip() or "source container PID unavailable",
-                }
-            probe = self._run_command([
-                "nsenter", "-t", inspected.stdout.strip(), "-n",
-                sys.executable, "-c", probe_code, target_ip, str(port),
+            # Try bash /dev/tcp before falling back to nsenter.
+            bash_probe = self._run_command([
+                "docker", "exec", "-u", "0", container, "bash", "-c",
+                f"exec 3<>/dev/tcp/{target_ip}/{port} 2>/dev/null && echo connected",
             ], timeout=10)
+            if bash_probe.returncode == 0 and "connected" in bash_probe.stdout:
+                probe = bash_probe
+            else:
+                inspected = self._run_command([
+                    "docker", "inspect", "-f", "{{.State.Pid}}", container,
+                ])
+                if inspected.returncode != 0 or not inspected.stdout.strip().isdigit():
+                    return {
+                        "port": port,
+                        "reachable": False,
+                        "detail": inspected.stderr.strip() or "source container PID unavailable",
+                    }
+                probe = self._run_command([
+                    "nsenter", "-t", inspected.stdout.strip(), "-n",
+                    sys.executable, "-c", probe_code, target_ip, str(port),
+                ], timeout=10)
         return {
             "port": port,
             "reachable": probe.returncode == 0,
@@ -830,6 +838,12 @@ class ScenarioVerifier:
                 unique_checks.append(check)
 
         results = []
+        # Slow-starting services (e.g. WebLogic) may pass the readiness
+        # check but still refuse TCP connections for 60-120 s.  Retry
+        # attack edges with a bounded wait so the probe reflects the real
+        # data-plane state rather than a transient start-up window.
+        RETRY_COUNT = 5
+        RETRY_WAIT = 30
         for check in unique_checks:
             expected = bool(check.get("expected_reachable", True))
             target_ip = str(check.get("target_ip", ""))
@@ -840,12 +854,20 @@ class ScenarioVerifier:
             ]
             probes = []
             if target_ip and ports:
-                probes = [
-                    self._probe_network_edge(
-                        lab_name, str(check.get("source_node", "")), target_ip, port
-                    )
-                    for port in ports
-                ]
+                for attempt in range(1 + RETRY_COUNT):
+                    probes = [
+                        self._probe_network_edge(
+                            lab_name, str(check.get("source_node", "")), target_ip, port
+                        )
+                        for port in ports
+                    ]
+                    if not expected:
+                        break
+                    if all(probe["reachable"] for probe in probes):
+                        break
+                    if attempt < RETRY_COUNT:
+                        import time
+                        time.sleep(RETRY_WAIT)
             all_reachable = bool(probes) and all(probe["reachable"] for probe in probes)
             any_reachable = any(probe["reachable"] for probe in probes)
             item = dict(check)

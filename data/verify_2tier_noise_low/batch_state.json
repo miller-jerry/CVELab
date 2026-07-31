@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-07-31T07:12:15.928784+00:00",
+  "template": "enterprise_2tier",
+  "cases": {
+    "noise-low-2018-16509-2014-3120": {
+      "case": {
+        "id": "noise-low-2018-16509-2014-3120",
+        "cves": [
+          "CVE-2018-16509",
+          "CVE-2014-3120"
+        ],
+        "purpose": ""
+      },
+      "scenario_dir": "/home/htxxp/test/CVELab/data/verify_2tier_noise_low/scenarios/e2t-77f6c021d11fdccb",
+      "status": "generated"
+    }
+  }
+}

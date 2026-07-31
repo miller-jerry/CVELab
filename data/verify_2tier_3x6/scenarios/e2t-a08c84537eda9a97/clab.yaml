@@ -16,7 +16,7 @@ topology:
       kind: linux
       image: vulhub/php:7.2.10-fpm
       env:
-        FLAG: flag{b664c8e54d7fec8a567f7cd12298ccaf}
+        FLAG: flag{e378251f4bbefefdd348f4d571e342e8}
       binds:
       - /home/htxxp/test/CVELab/data/atoms/CVE-2019-11043/init/www:/usr/share/nginx/html
       - /home/htxxp/test/CVELab/data/atoms/CVE-2019-11043/init/default.conf:/etc/nginx/conf.d/default.conf
@@ -27,7 +27,7 @@ topology:
       image: cvelab-runtime-2019-9193-e8b2723eae7f
       env:
         POSTGRES_PASSWORD: postgres
-        FLAG: flag{64d9daf3d3ebec39aa3bd40625e77b97}
+        FLAG: flag{ccdb9bdf574ae304cb5b19dcc08ed42b}
       binds:
       - flag-target-2.txt:/flag
   links:

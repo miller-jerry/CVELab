@@ -4,7 +4,7 @@ template: enterprise_2tier
 injections:
 - ip_id: dmz-web
   cve_id: CVE-2016-3088
-  flag: flag{3496591a947c53fd7f863848fb7aa5e6}
+  flag: flag{37d7e5a365b663737b61fffba328fdd9}
   node_name: target-1
   zone: dmz
   flag_hint: file:/flag
@@ -31,11 +31,11 @@ injections:
     command: null
   provides:
   - network_vantage
+  - read_file
   - network_vantage
   - read_file
-  - execute_command
-  - read_file
   - write_file
+  - execute_command
   required_capabilities: []
   granted_capabilities:
   - type: execute_command
@@ -58,7 +58,7 @@ injections:
   execution_adapter: null
 - ip_id: data-store
   cve_id: CVE-2015-1427
-  flag: flag{fef485a392727132a5491f28583e461f}
+  flag: flag{b5806f7c74136aeb35bf8291940689f1}
   node_name: target-2
   zone: data
   flag_hint: file:/flag
@@ -86,9 +86,9 @@ injections:
     command: null
   provides:
   - read_file
+  - execute_command
   - network_vantage
   - read_file
-  - execute_command
   required_capabilities: []
   granted_capabilities:
   - type: execute_command

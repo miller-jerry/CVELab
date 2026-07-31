@@ -1,0 +1,40 @@
+name: e2t-c8d4b90e4c2559e8
+topology:
+  nodes:
+    attacker:
+      kind: linux
+      image: clab-agent:latest
+    edge-router:
+      kind: linux
+      image: frrouting/frr:latest
+    data-router:
+      kind: linux
+      image: frrouting/frr:latest
+    target-1:
+      kind: linux
+      image: vulhub/activemq:5.11.1-with-cron
+      env:
+        FLAG: flag{fa4aa40d63e42b8f09fbb77310f265a3}
+      binds:
+      - flag-target-1.txt:/flag
+    target-2:
+      kind: linux
+      image: cvelab-runtime-2019-9193-e8b2723eae7f
+      env:
+        POSTGRES_PASSWORD: postgres
+        FLAG: flag{3761139f19ed7f8c78dac74cbe123224}
+      binds:
+      - flag-target-2.txt:/flag
+  links:
+  - endpoints:
+    - attacker:eth1
+    - edge-router:eth1
+  - endpoints:
+    - edge-router:eth2
+    - data-router:eth1
+  - endpoints:
+    - target-1:eth1
+    - edge-router:eth3
+  - endpoints:
+    - target-2:eth1
+    - data-router:eth2

@@ -1,0 +1,5 @@
+[Agent] API Error: 402 Insufficient credits. Add more using https://***.ai/***/*** ({"limit_source":"openrouter_credits","remedy_hint":"Add credits at https://***.ai/***/*** or lower max_tokens / prompt size 
+[Done] session=537e4dfb-8e52-4559-890f-9ec958243f70, cost=$0.0000
+[Error] Claude Code returned an error result: success
+[Output] /tmp/scenario_output.json
+[Session] /tmp/scenario_session.json (2 messages)

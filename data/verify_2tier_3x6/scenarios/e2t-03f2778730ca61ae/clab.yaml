@@ -17,7 +17,7 @@ topology:
       kind: linux
       image: vulhub/php:5.4.1-cgi
       env:
-        FLAG: flag{49ba970e4edfb6c7fb35c69b787fbb00}
+        FLAG: flag{260f5f971253f9b987984d27fe36845f}
       binds:
       - /home/htxxp/test/CVELab/data/atoms/CVE-2012-1823/init/www:/var/www/html
       - flag-target-1.txt:/flag
@@ -26,7 +26,7 @@ topology:
       image: cvelab-runtime-2019-9193-e8b2723eae7f
       env:
         POSTGRES_PASSWORD: postgres
-        FLAG: flag{beb7d6a44971cc34903324e603368b1b}
+        FLAG: flag{fe22bd2c89ba9cf15b3c702a2646a20c}
       binds:
       - flag-target-2.txt:/flag
   links:

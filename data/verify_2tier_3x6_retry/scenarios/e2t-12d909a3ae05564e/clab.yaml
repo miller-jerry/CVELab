@@ -1,0 +1,44 @@
+name: e2t-12d909a3ae05564e
+topology:
+  nodes:
+    attacker:
+      kind: linux
+      image: clab-agent:latest
+      binds:
+      - /home/htxxp/test/CVELab/data/atoms/CVE-2019-11043/source_bundle/default.conf:/vulhub/CVE-2019-11043__default.conf:ro
+    edge-router:
+      kind: linux
+      image: frrouting/frr:latest
+    data-router:
+      kind: linux
+      image: frrouting/frr:latest
+    target-1:
+      kind: linux
+      image: vulhub/php:7.2.10-fpm
+      env:
+        FLAG: flag{35a025c4f77004c1e271c45bccd71328}
+      binds:
+      - /home/htxxp/test/CVELab/data/atoms/CVE-2019-11043/init/www:/usr/share/nginx/html
+      - /home/htxxp/test/CVELab/data/atoms/CVE-2019-11043/init/default.conf:/etc/nginx/conf.d/default.conf
+      - /home/htxxp/test/CVELab/data/atoms/CVE-2019-11043/init/www:/var/www/html
+      - flag-target-1.txt:/flag
+    target-2:
+      kind: linux
+      image: vulhub/elasticsearch:1.1.1
+      env:
+        FLAG: flag{7074b2bb6be3e8f80980691dc7156f38}
+      binds:
+      - flag-target-2.txt:/flag
+  links:
+  - endpoints:
+    - attacker:eth1
+    - edge-router:eth1
+  - endpoints:
+    - edge-router:eth2
+    - data-router:eth1
+  - endpoints:
+    - target-1:eth1
+    - edge-router:eth3
+  - endpoints:
+    - target-2:eth1
+    - data-router:eth2

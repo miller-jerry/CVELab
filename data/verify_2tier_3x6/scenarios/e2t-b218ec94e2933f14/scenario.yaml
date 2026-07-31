@@ -4,7 +4,7 @@ template: enterprise_2tier
 injections:
 - ip_id: dmz-web
   cve_id: CVE-2022-22965
-  flag: flag{d4a765bfed3a4eeb0115aa16129c2661}
+  flag: flag{09abc42bf7eaf5ffc8ce35794d41946c}
   node_name: target-1
   zone: dmz
   flag_hint: file:/flag
@@ -31,9 +31,9 @@ injections:
   provides:
   - network_vantage
   - read_file
-  - execute_command
   - read_file
   - write_file
+  - execute_command
   required_capabilities: []
   granted_capabilities:
   - type: execute_command
@@ -57,7 +57,7 @@ injections:
   execution_adapter: null
 - ip_id: data-store
   cve_id: CVE-2014-3120
-  flag: flag{8f7b8c489a23581bc0a826f4ea0f98fb}
+  flag: flag{240a41db6252449dd0735b76197907a6}
   node_name: target-2
   zone: data
   flag_hint: file:/flag
@@ -85,9 +85,9 @@ injections:
     command: null
   provides:
   - read_file
+  - execute_command
   - network_vantage
   - read_file
-  - execute_command
   required_capabilities: []
   granted_capabilities:
   - type: execute_command

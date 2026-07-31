@@ -1,0 +1,26 @@
+---
+attacker:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.20.4
+data-router:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.20.5
+edge-router:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.20.2
+target-1:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.20.6
+target-2:
+    username: 
+    password: 
+    platform: linux
+    hostname: 172.20.20.3

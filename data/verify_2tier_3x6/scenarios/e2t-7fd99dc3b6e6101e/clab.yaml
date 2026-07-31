@@ -14,14 +14,14 @@ topology:
       kind: linux
       image: cvelab-runtime-2022-22965-b954ca0d33e2
       env:
-        FLAG: flag{53ec3ae070618c3d30d378afca1c0079}
+        FLAG: flag{e748456f774cc052ba45421645cc82b7}
       binds:
       - flag-target-1.txt:/flag
     target-2:
       kind: linux
       image: vulhub/elasticsearch:1.4.2
       env:
-        FLAG: flag{7f81c7f874753d5c5391b6daa5313736}
+        FLAG: flag{14edfa2682875b4358c929cad20ef7c2}
       binds:
       - flag-target-2.txt:/flag
   links:

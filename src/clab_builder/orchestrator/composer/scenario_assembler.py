@@ -1470,6 +1470,15 @@ class ScenarioAssembler:
                 ))
 
         # 2. Targets: IP + default route + flush eth0 (禁用管理网)
+        # Some application servers (e.g. WebLogic) bind to the management IP
+        # at container start and never re-bind when the address is removed.
+        # Flushing eth0 breaks their listening sockets, making the data-plane
+        # probe fail even though the service is running.  Instead of flushing
+        # the management IP, we keep it but remove the default route on eth0
+        # so data-plane routing is enforced.  We also add a DNAT rule that
+        # forwards data-plane connections to the management-IP listener.
+        # The management IP is the Docker-assigned eth0 address; we discover
+        # it at ansible time rather than hard-coding it here.
         for node_name, config in ip_alloc.items():
             if not node_name.startswith("target-"):
                 continue
@@ -1481,7 +1490,19 @@ class ScenarioAssembler:
                 node_name,
                 f"ip route replace default via {config['gateway']}"
             ))
-            tasks.append(node_cmd(node_name, "ip addr flush dev eth0"))
+            # Keep eth0 IP alive for services that bound to it, but remove
+            # the management default route and add a DNAT redirect from the
+            # data-plane IP to the management IP so probes succeed.
+            data_ip = str(config["eth1"]).split("/")[0]
+            tasks.append(node_cmd(
+                node_name,
+                f"ip route del default dev eth0 2>/dev/null; true"
+            ))
+            tasks.append(node_cmd(
+                node_name,
+                f"MGMT_IP=$(ip -4 addr show eth0 | grep -oP '(?<=inet\\s)\\d+\\.\\d+\\.\\d+\\.\\d+' | head -1); "
+                f"iptables -t nat -A PREROUTING -d {data_ip} -p tcp -j DNAT --to-destination $MGMT_IP"
+            ))
 
         # 3. Attacker: IP + route + flush eth0
         attacker_config = ip_alloc.get("attacker", {})

@@ -1,0 +1,266 @@
+{
+  "name": "e2t-9de638c29f85b014",
+  "type": "clab",
+  "clab": {
+    "config": {
+      "prefix": "clab",
+      "mgmt": {
+        "network": "clab",
+        "bridge": "br-2dc42cb2864d",
+        "ipv4-subnet": "172.20.20.0/24",
+        "ipv4-gw": "172.20.20.1",
+        "ipv6-subnet": "3fff:172:20:20::/64",
+        "ipv6-gw": "3fff:172:20:20::1",
+        "external-access": true
+      }
+    }
+  },
+  "ssh-pub-keys": ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIO+Qro9XzrZ52TsciI0gdzYDJt11LyMzsJ91zGvc83K2"],
+  "nodes": {
+    "attacker": {
+      "index": "0",
+      "shortname": "attacker",
+      "longname": "clab-e2t-9de638c29f85b014-attacker",
+      "fqdn": "attacker.e2t-9de638c29f85b014.io",
+      "group": "",
+      "labdir": "/home/htxxp/test/CVELab/data/verify_2tier_3x6_final/scenarios/e2t-9de638c29f85b014/clab-e2t-9de638c29f85b014/attacker",
+      "kind": "linux",
+      "image": "clab-agent:latest",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.4",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "3fff:172:20:20::4",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-2dc42cb2864d",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/htxxp/test/CVELab/data/verify_2tier_3x6_final/scenarios/e2t-9de638c29f85b014/clab-e2t-9de638c29f85b014/attacker",
+        "clab-node-longname": "clab-e2t-9de638c29f85b014-attacker",
+        "clab-node-name": "attacker",
+        "clab-node-type": "",
+        "clab-owner": "htxxp",
+        "clab-topo-file": "/home/htxxp/test/CVELab/data/verify_2tier_3x6_final/scenarios/e2t-9de638c29f85b014/clab.yaml",
+        "containerlab": "e2t-9de638c29f85b014"
+      },
+      "port-bindings": [
+      ]
+    },
+    "data-router": {
+      "index": "1",
+      "shortname": "data-router",
+      "longname": "clab-e2t-9de638c29f85b014-data-router",
+      "fqdn": "data-router.e2t-9de638c29f85b014.io",
+      "group": "",
+      "labdir": "/home/htxxp/test/CVELab/data/verify_2tier_3x6_final/scenarios/e2t-9de638c29f85b014/clab-e2t-9de638c29f85b014/data-router",
+      "kind": "linux",
+      "image": "frrouting/frr:latest",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.5",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "3fff:172:20:20::5",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-2dc42cb2864d",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/htxxp/test/CVELab/data/verify_2tier_3x6_final/scenarios/e2t-9de638c29f85b014/clab-e2t-9de638c29f85b014/data-router",
+        "clab-node-longname": "clab-e2t-9de638c29f85b014-data-router",
+        "clab-node-name": "data-router",
+        "clab-node-type": "",
+        "clab-owner": "htxxp",
+        "clab-topo-file": "/home/htxxp/test/CVELab/data/verify_2tier_3x6_final/scenarios/e2t-9de638c29f85b014/clab.yaml",
+        "containerlab": "e2t-9de638c29f85b014"
+      },
+      "port-bindings": [
+      ]
+    },
+    "edge-router": {
+      "index": "2",
+      "shortname": "edge-router",
+      "longname": "clab-e2t-9de638c29f85b014-edge-router",
+      "fqdn": "edge-router.e2t-9de638c29f85b014.io",
+      "group": "",
+      "labdir": "/home/htxxp/test/CVELab/data/verify_2tier_3x6_final/scenarios/e2t-9de638c29f85b014/clab-e2t-9de638c29f85b014/edge-router",
+      "kind": "linux",
+      "image": "frrouting/frr:latest",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.2",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "3fff:172:20:20::2",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-2dc42cb2864d",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/htxxp/test/CVELab/data/verify_2tier_3x6_final/scenarios/e2t-9de638c29f85b014/clab-e2t-9de638c29f85b014/edge-router",
+        "clab-node-longname": "clab-e2t-9de638c29f85b014-edge-router",
+        "clab-node-name": "edge-router",
+        "clab-node-type": "",
+        "clab-owner": "htxxp",
+        "clab-topo-file": "/home/htxxp/test/CVELab/data/verify_2tier_3x6_final/scenarios/e2t-9de638c29f85b014/clab.yaml",
+        "containerlab": "e2t-9de638c29f85b014"
+      },
+      "port-bindings": [
+      ]
+    },
+    "target-1": {
+      "index": "3",
+      "shortname": "target-1",
+      "longname": "clab-e2t-9de638c29f85b014-target-1",
+      "fqdn": "target-1.e2t-9de638c29f85b014.io",
+      "group": "",
+      "labdir": "/home/htxxp/test/CVELab/data/verify_2tier_3x6_final/scenarios/e2t-9de638c29f85b014/clab-e2t-9de638c29f85b014/target-1",
+      "kind": "linux",
+      "image": "vulhub/weblogic:10.3.6.0-2017",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.6",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "3fff:172:20:20::6",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-2dc42cb2864d",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/htxxp/test/CVELab/data/verify_2tier_3x6_final/scenarios/e2t-9de638c29f85b014/clab-e2t-9de638c29f85b014/target-1",
+        "clab-node-longname": "clab-e2t-9de638c29f85b014-target-1",
+        "clab-node-name": "target-1",
+        "clab-node-type": "",
+        "clab-owner": "htxxp",
+        "clab-topo-file": "/home/htxxp/test/CVELab/data/verify_2tier_3x6_final/scenarios/e2t-9de638c29f85b014/clab.yaml",
+        "containerlab": "e2t-9de638c29f85b014"
+      },
+      "port-bindings": [
+        {
+          "host-ip": "",
+          "host-port": 0,
+          "port": 5556,
+          "protocol": "tcp"
+        },
+        {
+          "host-ip": "",
+          "host-port": 0,
+          "port": 7001,
+          "protocol": "tcp"
+        }
+      ]
+    },
+    "target-2": {
+      "index": "4",
+      "shortname": "target-2",
+      "longname": "clab-e2t-9de638c29f85b014-target-2",
+      "fqdn": "target-2.e2t-9de638c29f85b014.io",
+      "group": "",
+      "labdir": "/home/htxxp/test/CVELab/data/verify_2tier_3x6_final/scenarios/e2t-9de638c29f85b014/clab-e2t-9de638c29f85b014/target-2",
+      "kind": "linux",
+      "image": "vulhub/elasticsearch:1.1.1",
+      "mgmt-net": "",
+      "mgmt-intf": "",
+      "mgmt-ipv4-address": "172.20.20.3",
+      "mgmt-ipv4-prefix-length": 24,
+      "mgmt-ipv6-address": "3fff:172:20:20::3",
+      "mgmt-ipv6-prefix-length": 64,
+      "mac-address": "",
+      "labels": {
+        "clab-mgmt-net-bridge": "br-2dc42cb2864d",
+        "clab-node-group": "",
+        "clab-node-kind": "linux",
+        "clab-node-lab-dir": "/home/htxxp/test/CVELab/data/verify_2tier_3x6_final/scenarios/e2t-9de638c29f85b014/clab-e2t-9de638c29f85b014/target-2",
+        "clab-node-longname": "clab-e2t-9de638c29f85b014-target-2",
+        "clab-node-name": "target-2",
+        "clab-node-type": "",
+        "clab-owner": "htxxp",
+        "clab-topo-file": "/home/htxxp/test/CVELab/data/verify_2tier_3x6_final/scenarios/e2t-9de638c29f85b014/clab.yaml",
+        "containerlab": "e2t-9de638c29f85b014"
+      },
+      "port-bindings": [
+        {
+          "host-ip": "",
+          "host-port": 0,
+          "port": 9200,
+          "protocol": "tcp"
+        },
+        {
+          "host-ip": "",
+          "host-port": 0,
+          "port": 9300,
+          "protocol": "tcp"
+        }
+      ]
+    }
+  },
+  "links": [
+    {
+      "endpoints": {
+        "a": {
+          "node": "attacker",
+          "interface": "eth1",
+          "mac": "aa:c1:ab:ec:7e:7a",
+          "peer": "z"
+        },
+        "z": {
+          "node": "edge-router",
+          "interface": "eth1",
+          "mac": "aa:c1:ab:cd:8f:81",
+          "peer": "a"
+        }
+      }
+    },
+    {
+      "endpoints": {
+        "a": {
+          "node": "edge-router",
+          "interface": "eth2",
+          "mac": "aa:c1:ab:2f:d6:ed",
+          "peer": "z"
+        },
+        "z": {
+          "node": "data-router",
+          "interface": "eth1",
+          "mac": "aa:c1:ab:c8:f6:3b",
+          "peer": "a"
+        }
+      }
+    },
+    {
+      "endpoints": {
+        "a": {
+          "node": "target-1",
+          "interface": "eth1",
+          "mac": "aa:c1:ab:c6:38:3d",
+          "peer": "z"
+        },
+        "z": {
+          "node": "edge-router",
+          "interface": "eth3",
+          "mac": "aa:c1:ab:b0:17:5d",
+          "peer": "a"
+        }
+      }
+    },
+    {
+      "endpoints": {
+        "a": {
+          "node": "target-2",
+          "interface": "eth1",
+          "mac": "aa:c1:ab:2f:a3:64",
+          "peer": "z"
+        },
+        "z": {
+          "node": "data-router",
+          "interface": "eth2",
+          "mac": "aa:c1:ab:49:0f:52",
+          "peer": "a"
+        }
+      }
+    }
+  ]
+}

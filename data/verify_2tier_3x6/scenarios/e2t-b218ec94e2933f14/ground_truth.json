@@ -8,7 +8,7 @@
       "target_node": "target-1",
       "cve_id": "CVE-2022-22965",
       "zone": "dmz",
-      "flag": "flag{d4a765bfed3a4eeb0115aa16129c2661}",
+      "flag": "flag{09abc42bf7eaf5ffc8ce35794d41946c}",
       "flag_hint": "file:/flag",
       "target_ip": "192.168.100.2",
       "ports": [
@@ -55,9 +55,9 @@
       "provides": [
         "network_vantage",
         "read_file",
-        "execute_command",
         "read_file",
-        "write_file"
+        "write_file",
+        "execute_command"
       ],
       "mitre_phase": "initial_access",
       "readiness_probes": [
@@ -79,7 +79,7 @@
       "target_node": "target-2",
       "cve_id": "CVE-2014-3120",
       "zone": "data",
-      "flag": "flag{8f7b8c489a23581bc0a826f4ea0f98fb}",
+      "flag": "flag{240a41db6252449dd0735b76197907a6}",
       "flag_hint": "file:/flag",
       "target_ip": "10.10.2.2",
       "ports": [
@@ -130,9 +130,9 @@
       ],
       "provides": [
         "read_file",
+        "execute_command",
         "network_vantage",
-        "read_file",
-        "execute_command"
+        "read_file"
       ],
       "mitre_phase": "initial_access",
       "readiness_probes": [

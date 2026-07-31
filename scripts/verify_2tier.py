@@ -68,6 +68,7 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     p.add_argument("--environment-only", action="store_true", help="Deploy + ansible, skip Agent")
     p.add_argument("--resume", action="store_true", help="Resume an interrupted batch")
     p.add_argument("--parallel", type=int, default=1, help="Max parallel case generations (not for agent runs)")
+    p.add_argument("--noise-level", default="none", help="Noise level: none/low/medium/high")
     return p.parse_args(argv)
 
 
@@ -88,6 +89,7 @@ def generate_scenarios(cases: list[dict], args: argparse.Namespace, output_dir: 
                 cve_ids=case["cves"],
                 scenario_name=name,
                 output_dir=str(scenarios_root),
+                noise_level=args.noise_level,
             )
             results.append({
                 "case": case,
@@ -202,6 +204,7 @@ def main() -> int:
             pipeline.generate(
                 template_name="enterprise_2tier", cve_ids=case["cves"],
                 scenario_name=name, output_dir=str(output_dir / "scenarios"),
+                noise_level=args.noise_level,
             )
             state["cases"][case["id"]]["status"] = "generated"
             state["cases"][case["id"]]["scenario_dir"] = str(scenario_dir)

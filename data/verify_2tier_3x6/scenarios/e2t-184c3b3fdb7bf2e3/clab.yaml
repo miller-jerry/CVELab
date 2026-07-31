@@ -17,7 +17,7 @@ topology:
       kind: linux
       image: cvelab-runtime-2018-16509-6690af7aec2e
       env:
-        FLAG: flag{6166d8256747961f7f087a69a9271cf0}
+        FLAG: flag{9e87a8a75385cd7dd0dfaa38c78e834e}
       cmd: php -t /var/www/html -S 0.0.0.0:8080
       binds:
       - /home/htxxp/test/CVELab/data/atoms/CVE-2018-16509/init/index.php:/var/www/html/index.php
@@ -26,7 +26,7 @@ topology:
       kind: linux
       image: vulhub/elasticsearch:1.1.1
       env:
-        FLAG: flag{633c8f9515a4092c7d75ae892cd827ac}
+        FLAG: flag{079af24427ac096445860f305f058b40}
       binds:
       - flag-target-2.txt:/flag
   links:

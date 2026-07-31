@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "created_at": "2026-07-30T12:35:49.228509+00:00",
+  "created_at": "2026-07-30T16:01:57.656571+00:00",
   "template": "enterprise_2tier",
   "cases": {
     "2t3x6-CVE-2012-1823-CVE-2019-9193": {
@@ -12,7 +12,7 @@
         ],
         "purpose": ""
       },
-      "scenario_dir": "/home/htxxp/test/CVELab/data/verify_2tier_3x6/scenarios/e2t-03f2778730ca61ae",
+      "scenario_dir": "/home/htxxp/test/CVELab/data/verify_2tier_3x6_agent/scenarios/e2t-03f2778730ca61ae",
       "status": "generated"
     },
     "2t3x6-CVE-2012-1823-CVE-2014-3120": {
@@ -24,7 +24,7 @@
         ],
         "purpose": ""
       },
-      "scenario_dir": "/home/htxxp/test/CVELab/data/verify_2tier_3x6/scenarios/e2t-aad380828aff11d6",
+      "scenario_dir": "/home/htxxp/test/CVELab/data/verify_2tier_3x6_agent/scenarios/e2t-aad380828aff11d6",
       "status": "generated"
     },
     "2t3x6-CVE-2012-1823-CVE-2015-1427": {
@@ -36,7 +36,7 @@
         ],
         "purpose": ""
       },
-      "scenario_dir": "/home/htxxp/test/CVELab/data/verify_2tier_3x6/scenarios/e2t-a8ce764e9791f7c1",
+      "scenario_dir": "/home/htxxp/test/CVELab/data/verify_2tier_3x6_agent/scenarios/e2t-a8ce764e9791f7c1",
       "status": "generated"
     },
     "2t3x6-CVE-2018-16509-CVE-2019-9193": {
@@ -48,7 +48,7 @@
         ],
         "purpose": ""
       },
-      "scenario_dir": "/home/htxxp/test/CVELab/data/verify_2tier_3x6/scenarios/e2t-2b747f24c2ec1dfb",
+      "scenario_dir": "/home/htxxp/test/CVELab/data/verify_2tier_3x6_agent/scenarios/e2t-2b747f24c2ec1dfb",
       "status": "generated"
     },
     "2t3x6-CVE-2018-16509-CVE-2014-3120": {
@@ -60,7 +60,7 @@
         ],
         "purpose": ""
       },
-      "scenario_dir": "/home/htxxp/test/CVELab/data/verify_2tier_3x6/scenarios/e2t-184c3b3fdb7bf2e3",
+      "scenario_dir": "/home/htxxp/test/CVELab/data/verify_2tier_3x6_agent/scenarios/e2t-184c3b3fdb7bf2e3",
       "status": "generated"
     },
     "2t3x6-CVE-2018-16509-CVE-2015-1427": {
@@ -72,7 +72,7 @@
         ],
         "purpose": ""
       },
-      "scenario_dir": "/home/htxxp/test/CVELab/data/verify_2tier_3x6/scenarios/e2t-3003e10b3d6bd785",
+      "scenario_dir": "/home/htxxp/test/CVELab/data/verify_2tier_3x6_agent/scenarios/e2t-3003e10b3d6bd785",
       "status": "generated"
     },
     "2t3x6-CVE-2022-22965-CVE-2019-9193": {
@@ -84,7 +84,7 @@
         ],
         "purpose": ""
       },
-      "scenario_dir": "/home/htxxp/test/CVELab/data/verify_2tier_3x6/scenarios/e2t-5e33e53536c0017f",
+      "scenario_dir": "/home/htxxp/test/CVELab/data/verify_2tier_3x6_agent/scenarios/e2t-5e33e53536c0017f",
       "status": "generated"
     },
     "2t3x6-CVE-2022-22965-CVE-2014-3120": {
@@ -96,7 +96,7 @@
         ],
         "purpose": ""
       },
-      "scenario_dir": "/home/htxxp/test/CVELab/data/verify_2tier_3x6/scenarios/e2t-b218ec94e2933f14",
+      "scenario_dir": "/home/htxxp/test/CVELab/data/verify_2tier_3x6_agent/scenarios/e2t-b218ec94e2933f14",
       "status": "generated"
     },
     "2t3x6-CVE-2022-22965-CVE-2015-1427": {
@@ -108,7 +108,7 @@
         ],
         "purpose": ""
       },
-      "scenario_dir": "/home/htxxp/test/CVELab/data/verify_2tier_3x6/scenarios/e2t-7fd99dc3b6e6101e",
+      "scenario_dir": "/home/htxxp/test/CVELab/data/verify_2tier_3x6_agent/scenarios/e2t-7fd99dc3b6e6101e",
       "status": "generated"
     },
     "2t3x6-CVE-2017-10271-CVE-2019-9193": {
@@ -120,7 +120,7 @@
         ],
         "purpose": ""
       },
-      "scenario_dir": "/home/htxxp/test/CVELab/data/verify_2tier_3x6/scenarios/e2t-322b1e08c793e8d2",
+      "scenario_dir": "/home/htxxp/test/CVELab/data/verify_2tier_3x6_agent/scenarios/e2t-322b1e08c793e8d2",
       "status": "generated"
     },
     "2t3x6-CVE-2017-10271-CVE-2014-3120": {
@@ -132,7 +132,7 @@
         ],
         "purpose": ""
       },
-      "scenario_dir": "/home/htxxp/test/CVELab/data/verify_2tier_3x6/scenarios/e2t-3b6914408ed3ed71",
+      "scenario_dir": "/home/htxxp/test/CVELab/data/verify_2tier_3x6_agent/scenarios/e2t-3b6914408ed3ed71",
       "status": "generated"
     },
     "2t3x6-CVE-2017-10271-CVE-2015-1427": {
@@ -144,7 +144,7 @@
         ],
         "purpose": ""
       },
-      "scenario_dir": "/home/htxxp/test/CVELab/data/verify_2tier_3x6/scenarios/e2t-b5bd38d7ebc9e87a",
+      "scenario_dir": "/home/htxxp/test/CVELab/data/verify_2tier_3x6_agent/scenarios/e2t-b5bd38d7ebc9e87a",
       "status": "generated"
     },
     "2t3x6-CVE-2016-3088-CVE-2019-9193": {
@@ -156,7 +156,7 @@
         ],
         "purpose": ""
       },
-      "scenario_dir": "/home/htxxp/test/CVELab/data/verify_2tier_3x6/scenarios/e2t-85d11ade96bb0424",
+      "scenario_dir": "/home/htxxp/test/CVELab/data/verify_2tier_3x6_agent/scenarios/e2t-85d11ade96bb0424",
       "status": "generated"
     },
     "2t3x6-CVE-2016-3088-CVE-2014-3120": {
@@ -168,7 +168,7 @@
         ],
         "purpose": ""
       },
-      "scenario_dir": "/home/htxxp/test/CVELab/data/verify_2tier_3x6/scenarios/e2t-092a5ab108ea0e79",
+      "scenario_dir": "/home/htxxp/test/CVELab/data/verify_2tier_3x6_agent/scenarios/e2t-092a5ab108ea0e79",
       "status": "generated"
     },
     "2t3x6-CVE-2016-3088-CVE-2015-1427": {
@@ -180,7 +180,7 @@
         ],
         "purpose": ""
       },
-      "scenario_dir": "/home/htxxp/test/CVELab/data/verify_2tier_3x6/scenarios/e2t-8f38dc440fc19c42",
+      "scenario_dir": "/home/htxxp/test/CVELab/data/verify_2tier_3x6_agent/scenarios/e2t-8f38dc440fc19c42",
       "status": "generated"
     },
     "2t3x6-CVE-2019-11043-CVE-2019-9193": {
@@ -192,7 +192,7 @@
         ],
         "purpose": ""
       },
-      "scenario_dir": "/home/htxxp/test/CVELab/data/verify_2tier_3x6/scenarios/e2t-a08c84537eda9a97",
+      "scenario_dir": "/home/htxxp/test/CVELab/data/verify_2tier_3x6_agent/scenarios/e2t-a08c84537eda9a97",
       "status": "generated"
     },
     "2t3x6-CVE-2019-11043-CVE-2014-3120": {
@@ -204,7 +204,7 @@
         ],
         "purpose": ""
       },
-      "scenario_dir": "/home/htxxp/test/CVELab/data/verify_2tier_3x6/scenarios/e2t-9ec0488e6ca6181d",
+      "scenario_dir": "/home/htxxp/test/CVELab/data/verify_2tier_3x6_agent/scenarios/e2t-9ec0488e6ca6181d",
       "status": "generated"
     },
     "2t3x6-CVE-2019-11043-CVE-2015-1427": {
@@ -216,7 +216,7 @@
         ],
         "purpose": ""
       },
-      "scenario_dir": "/home/htxxp/test/CVELab/data/verify_2tier_3x6/scenarios/e2t-9a9d9e8c429f4175",
+      "scenario_dir": "/home/htxxp/test/CVELab/data/verify_2tier_3x6_agent/scenarios/e2t-9a9d9e8c429f4175",
       "status": "generated"
     }
   }

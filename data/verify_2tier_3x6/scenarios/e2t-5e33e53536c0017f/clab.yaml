@@ -14,7 +14,7 @@ topology:
       kind: linux
       image: cvelab-runtime-2022-22965-b954ca0d33e2
       env:
-        FLAG: flag{01a85f7b2fcdc5d7373a338b007eca8e}
+        FLAG: flag{d555b12b471853c62d67fd6fa16d55aa}
       binds:
       - flag-target-1.txt:/flag
     target-2:
@@ -22,7 +22,7 @@ topology:
       image: cvelab-runtime-2019-9193-e8b2723eae7f
       env:
         POSTGRES_PASSWORD: postgres
-        FLAG: flag{20de11793a96af3e292d1df225cc43bf}
+        FLAG: flag{e971ddbdb123b9e7e8f481cef2d29d6f}
       binds:
       - flag-target-2.txt:/flag
   links:

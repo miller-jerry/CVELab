@@ -1,0 +1,5 @@
+[Agent] API Error: 402 Insufficient Balance (request id: 202607301704135694813068268d9d6bHvXl9Ea)
+[Done] session=7b220326-0ba3-4f29-ac2f-8d9bf33d53ed, cost=$0.0000
+[Error] Claude Code returned an error result: success
+[Output] /tmp/scenario_output.json
+[Session] /tmp/scenario_session.json (2 messages)

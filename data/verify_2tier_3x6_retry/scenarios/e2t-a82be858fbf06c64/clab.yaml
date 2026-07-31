@@ -1,0 +1,44 @@
+name: e2t-a82be858fbf06c64
+topology:
+  nodes:
+    attacker:
+      kind: linux
+      image: clab-agent:latest
+      binds:
+      - /home/htxxp/test/CVELab/data/atoms/CVE-2012-1823/source_bundle/www/index.php:/vulhub/CVE-2012-1823__index.php:ro
+      - /home/htxxp/test/CVELab/data/atoms/CVE-2012-1823/source_bundle/www/info.php:/vulhub/CVE-2012-1823__info.php:ro
+    edge-router:
+      kind: linux
+      image: frrouting/frr:latest
+    data-router:
+      kind: linux
+      image: frrouting/frr:latest
+    target-1:
+      kind: linux
+      image: vulhub/php:5.4.1-cgi
+      env:
+        FLAG: flag{1847a8aa4df5b62be2f20d489c9dadba}
+      binds:
+      - /home/htxxp/test/CVELab/data/atoms/CVE-2012-1823/init/www:/var/www/html
+      - flag-target-1.txt:/flag
+    target-2:
+      kind: linux
+      image: cvelab-runtime-2019-9193-e8b2723eae7f
+      env:
+        POSTGRES_PASSWORD: postgres
+        FLAG: flag{06fbc4dcd7e567a9d874fcbbcedfe7c7}
+      binds:
+      - flag-target-2.txt:/flag
+  links:
+  - endpoints:
+    - attacker:eth1
+    - edge-router:eth1
+  - endpoints:
+    - edge-router:eth2
+    - data-router:eth1
+  - endpoints:
+    - target-1:eth1
+    - edge-router:eth3
+  - endpoints:
+    - target-2:eth1
+    - data-router:eth2
